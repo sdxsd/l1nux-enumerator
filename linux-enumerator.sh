@@ -26,7 +26,7 @@ list_root_processes() {
 
 find_user_writeable_files_owned_by_root() {
 	echo '=== User writeable files and directories owned by root ==='
-	find '/' 2>/dev/null -writable -user 'root' | grep -v "| /proc" | grep -v "| /dev" | grep -v "| /run" | grep -v "| /var/log" | grep -v "| /boot"  | grep -v "| /sys/"
+	find '/' 2>/dev/null -writable -user 'root' | grep -v "/proc" | grep -v "/dev" | grep -v "/run" | grep -v "/var/log" | grep -v "/boot"  | grep -v "/sys/"
 }
 
 list_open_ports() {
