@@ -16,7 +16,7 @@ userinfo() {
 	echo '=== Whoami ===':
 	whoami
 	echo '=== ' $USER ' Owned Directories ==='
-	find '/' 2>/dev/null -user "$USER" -type d
+	find '/' 2>/dev/null -user "$USER" -type d | grep -v "/proc/" | grep -v "/dev/" | grep -v "/run/" | grep -v "/var/log/" | grep -v "/boot/"  | grep -v "/sys/"
 }
 
 list_root_processes() {
